@@ -21,7 +21,15 @@ movies = [
         'year': '2009',
         'rating': 7.8,
         'category': 'Acción'    
-    } 
+    },
+    {
+        'id': 3,
+        'title': 'Gravedad',
+        'overview': "Pelicula en el espacio",
+        'year': '2018',
+        'rating': 7.7,
+        'category': 'Ficción'    
+    }
 
 ]
 
@@ -41,3 +49,7 @@ def get_movie(id: int):
         if item["id"] == id:
             return item
         return []
+
+@app.get('/movies/', tags=['movies'])
+def get_movies_by_category(category: str, year: int):
+        return category
