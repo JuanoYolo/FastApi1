@@ -28,7 +28,7 @@ movies = [
         'overview': "Pelicula en el espacio",
         'year': '2018',
         'rating': 7.7,
-        'category': 'Ficción'    
+        'category': 'Ficcion'    
     }
 
 ]
@@ -52,4 +52,4 @@ def get_movie(id: int):
 
 @app.get('/movies/', tags=['movies'])
 def get_movies_by_category(category: str, year: int):
-        return category
+        return [ item for item in movies if item['category'] == category]
